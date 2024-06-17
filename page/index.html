@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email sender</title>
+    
+    <link href="output.css" rel="stylesheet">
+    <style>
+        .banner {
+            background-image: url('https://images.pexels.com/photos/260367/pexels-photo-260367.jpeg'); /* URL de la imagen de bomberos */
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (max-width: 640px) { /* Tailwind sm: breakpoint for mobile */
+            .banner {
+                height: 150px; /* Reduce the height for mobile view */
+                max-width: 100%; /* Ensure it doesn't overflow */
+                padding: 0 10px; /* Add some padding if needed */
+            }}
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-lg mx-auto p-4 bg-white shadow-md rounded-lg mt-10">
+        <div class="banner w-full h-64 flex items-center justify-center text-white text-3xl font-bold">
+            Bienvenidos a la Estación de Bomberos </div>
+        <h1 class="text-3xl font-bold text-red-600 mb-6 text-center">Hola Bombero</h1>
+        <form action="/send_email" method="post" class="space-y-4">
+            
+            <div>
+                <label for="to" class="block text-gray-700">Para</label>
+                <input type="email" name="to" id="to" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required>
+            </div>
+            <div>
+                <label for="subject" class="block text-gray-700">Asunto</label>
+                <input type="text" name="subject" id="subject" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required>
+            </div>
+            <div>
+                <label for="visitname" class="block text-gray-700">Nombre del Visitado</label>
+                <input type="text" name="visitname" id="visitname" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required>
+            </div>
+            <div>
+                <label for="adresse" class="block text-gray-700">Dirección del Visitado</label>
+                <input type="text" name="adresse" id="adresse" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required>
+            </div>
+            <div>
+                <label for="firm" class="block text-gray-700">Firma</label>
+                <input type="text" name="firm" id="firm" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required>
+            </div>
+            <div>
+                <label for="fecha" class="block text-gray-700">Selecciona una fecha</label>
+                <input type="date" id="fecha" name="fecha" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" required>
+            </div>
+            <div>
+                <label for="message" class="block text-gray-700">Informe Técnico</label>
+                <textarea name="message" id="message" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500" rows="4" required></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Enviar" class="w-full px-4 py-2 bg-red-600 text-white font-bold rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
